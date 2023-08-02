@@ -9,12 +9,13 @@ import { useRouter } from "next/navigation";
 const NavbarActions = () => {
   const [isMounted, setIsMounted] = useState(false);
 
+  const cart = useCart();
+  console.log("cart: ", cart);
+  const router = useRouter();
+
   useEffect(() => {
     setIsMounted(true);
   }, []);
-
-  const cart = useCart();
-  const router = useRouter();
 
   if (!isMounted) {
     return null;
